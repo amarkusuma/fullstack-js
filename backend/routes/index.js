@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 // import request from "request";
 
 import { getUsers, Register, Login } from "../controllers/Users.js";
-import { JobList  } from "../controllers/Jobs.js";
+import { JobList , JobDetail } from "../controllers/Jobs.js";
 import { verifyToken } from "../middleware/VerifyToken.js";
 import { refreshToken } from "../controllers/RefreshToken.js";
  
@@ -17,6 +17,9 @@ router.post('/users', Register);
 router.post('/login', Login);
 router.get('/token', refreshToken);
 router.get('/job-list', JobList);
+
+router.get('/job-detail/:uid', JobDetail);
+
 
 // router.get('/test',  async (req, res) =>  {
 //     try {
